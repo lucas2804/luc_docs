@@ -35,6 +35,20 @@ tunnels:
     addr: 127.0.0.1:3000
 ```
 
+- SET UP local side
+
+```bash
+rake db:create
+rake db:migrate
+rake db:seed
+ngrok start judgeluc
+rails s
+mailcatcher
+sidekiq
+brew services start mongodb-community@4.2; brew services start postgresql; brew services start redis; ~/elasticsearch-6.0.0/bin/elasticsearch
+```
+
+
 4) Regis a `shop-partner` on shopify eg: ```https://judgelucshop.myshopify.com/admin/apps```
 
 5) Create an `shop-test` on shopify
@@ -52,4 +66,3 @@ tunnels:
 8) Install `app-test` on `shop-test`
 
 ![install-app-on-shop-test.png](./images/install-app-on-shop-test.png)
-
