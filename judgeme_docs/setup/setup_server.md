@@ -66,3 +66,36 @@ brew services start mongodb-community@4.2; brew services start postgresql; brew 
 8) Install `app-test` on `shop-test`
 
 ![install-app-on-shop-test.png](./images/install-app-on-shop-test.png)
+
+9) Install theme debut then PUBLIC
+
+![install-debut-theme.png](./images/install-debut-theme.png)
+
+10) Access to product page of shop-test
+
+![access-to-product-page.png](./images/access-to-product-page.png)
+
+11) If review badge are not displayed,  shopify blocked your `judgeme_core.liquid` and `judgeme_widgets.liquid` files.
+
++ View Page Source or Inspect element
++ Find string `<!-- "snippets/judgeme_core.liquid" was not rendered, the associated app was uninstalled -->`
++ If exist `the associated app was uninstalled`
++ That's mean shopify blocked your `judgeme_core.liquid` and `judgeme_widgets.liquid` files.
+
+12) To fix issue  shopify blocked your `judgeme_core.liquid` and `judgeme_widgets.liquid` files.
+
++ Edit code of current theme (Debut)
+
+![edit-code-of-current-theme.png](./images/edit-code-of-current-theme.png)
+
++ Clone 2 files which blocked by shopify
++ `judgeme_core.liquid` -> `judgeme_core_v2.liquid`
++ `judgeme_widgets.liquid` -> `judgeme_widgets_v2.liquid`
+
++ Edit file names to `judgeme_core_v2.liquid` `judgeme_widgets_v2.liquid` in files below:
++ `theme.liquid`
++ `product-card-grid.liquid`
++ `product-card-grid.liquid`
++ `product-template.liquid`
+
++ Save then refresh page in 3 minutes
